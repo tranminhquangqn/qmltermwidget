@@ -52,7 +52,9 @@ KSession::~KSession()
         delete m_session;
     }
 }
-
+void KSession::setLimitLines(int limitLines){
+    _limitLines = limitLines;
+}
 void KSession::sendPID1(int nPID1){
     _PID1 = nPID1;
 }
@@ -128,7 +130,7 @@ Session *KSession::createSession(QString name)
     session->setCodec(QTextCodec::codecForName("UTF-8"));
 
     session->setFlowControlEnabled(true);
-    session->setHistoryType(HistoryTypeBuffer(100000));
+    session->setHistoryType(HistoryTypeBuffer(_limitLines));
 
     session->setDarkBackground(true);
 

@@ -172,6 +172,7 @@ public slots:
 
     void onFullDataReceived(const QString& data, int pidN);
 
+    void setLimitLines(int value)
     void sendPID2(int nPID2);
     void sendPID1(int nPID1);
 protected slots:
@@ -190,7 +191,7 @@ private:
     QTextBrowser* outputTextBrowser;
     int _PID2;
     int _PID1;
-
+    int _limitLines = 1000;
 };
 
 #endif // KSESSION_H
