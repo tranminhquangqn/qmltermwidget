@@ -128,7 +128,7 @@ Session *KSession::createSession(QString name)
     session->setCodec(QTextCodec::codecForName("UTF-8"));
 
     session->setFlowControlEnabled(true);
-    session->setHistoryType(HistoryTypeBuffer(20000));
+    session->setHistoryType(HistoryTypeBuffer(1000));
 
     session->setDarkBackground(true);
 
