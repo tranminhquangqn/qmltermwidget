@@ -167,7 +167,7 @@ class HistoryScrollBuffer : public HistoryScroll
 public:
   typedef QVector<Character> HistoryLine;
 
-  HistoryScrollBuffer(unsigned int maxNbLines = 1000);
+  HistoryScrollBuffer(unsigned int maxNbLines = 20000);
   ~HistoryScrollBuffer() override;
 
   int  getLines() override;
@@ -362,7 +362,7 @@ class CompactHistoryScroll : public HistoryScroll
   typedef QList<CompactHistoryLine*> HistoryArray;
 
 public:
-  CompactHistoryScroll(unsigned int maxNbLines = 1000);
+  CompactHistoryScroll(unsigned int maxNbLines = 20000);
   ~CompactHistoryScroll() override;
 
   int  getLines() override;
