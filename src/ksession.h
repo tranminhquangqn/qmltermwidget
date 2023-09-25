@@ -172,7 +172,7 @@ public slots:
 
     void onFullDataReceived(const QString& data, int pidN);
 
-    void setLimitLines(int value);
+    void setLimitLines(int limitLines);
     void sendPID2(int nPID2);
     void sendPID1(int nPID1);
 protected slots:
