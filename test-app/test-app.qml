@@ -7,12 +7,12 @@ Rectangle {
     height: 480
 
     Action{
-        onTriggered: terminal.copyClipboard();
+        onTriggered: terminal1.copyClipboard();
         shortcut: "Ctrl+Shift+C"
     }
 
     Action{
-        onTriggered: terminal.pasteClipboard();
+        onTriggered: terminal1.pasteClipboard();
         shortcut: "Ctrl+Shift+V"
     }
 
