@@ -61,20 +61,20 @@ void KSession::sendPID2(int nPID2){
 
 void KSession::onDataReceived(const QString& data, int pidN)
 {
-//    static QString accumulatedData;
-//    if(pidN == _PID1 ){
-//        accumulatedData += data;
-//        int lineEnd = accumulatedData.indexOf('\n');
-//        while (lineEnd != -1) {
-//            QString line = accumulatedData.left(lineEnd).trimmed();
-//            if (!line.isEmpty()) {
-//                outputTextBrowser->append(line);
-//                emit newDataReceived(line);
-//            }
-//            accumulatedData = accumulatedData.mid(lineEnd + 1);
-//            lineEnd = accumulatedData.indexOf('\n');
-//        }
-//    }
+    static QString accumulatedData;
+    if(pidN == _PID1 ){
+        accumulatedData += data;
+        int lineEnd = accumulatedData.indexOf('\n');
+        while (lineEnd != -1) {
+            QString line = accumulatedData.left(lineEnd).trimmed();
+            if (!line.isEmpty()) {
+                outputTextBrowser->append(line);
+                emit newDataReceived(line);
+            }
+            accumulatedData = accumulatedData.mid(lineEnd + 1);
+            lineEnd = accumulatedData.indexOf('\n');
+        }
+    }
 }
 
 void KSession::onFullDataReceived(const QString& data, int pidN)
